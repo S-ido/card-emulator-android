@@ -1,0 +1,67 @@
+ext {
+    // Android Config
+    androidBuildToolsVersion = '23.0.2'
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+
+    kotlinVersion = '1.3.31'
+
+    // Android Libraries
+    appCompatVersion = '1.0.2'
+    ktxVersion = '1.0.2'
+    constraintlayoutVersion = '1.1.3'
+
+
+    // Test Libraries
+    junitVersion = '4.12'
+    testRunnerVersion = '1.1.1'
+    espressoCoreVersion = '3.1.1'
+
+    androidLibs = [
+            /**
+             * Android support library.
+             * @link https://developer.android.com/jetpack/androidx/releases/appcompat
+             * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            appCompat : "androidx.appcompat:appcompat:$rootProject.appCompatVersion",
+
+            /**
+             * A set of Kotlin extensions for Android app development.
+             * @link https://developer.android.com/kotlin/ktx
+             * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            ktx : "androidx.core:core-ktx:$rootProject.ktxVersion",
+
+            /**
+             * A support library providing implementation of ConstraintLayout.
+             * ConstraintLayout allows you to create large and complex layouts with a flat view hierarchy.
+             * @link https://developer.android.com/reference/android/support/constraint/ConstraintLayout
+             * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            constraintLayout : "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayoutVersion"
+    ]
+
+    testLibs = [
+            /**
+             * Framework to write repeatable tests.
+             * @link https://github.com/junit-team/junit
+             * @license Eclipse Public License - v 1.0 [https://github.com/junit-team/junit/blob/master/LICENSE-junit.txt]
+             */
+            junit : "junit:junit:$rootProject.junitVersion",
+
+            /**
+             * An Instrumentation that runs JUnit3 and JUnit4 tests against an Android package.
+             * @link https://developer.android.com/reference/androidx/test/runner/package-summary.html
+             * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            runner : "androidx.test:runner:$rootProject.testRunnerVersion",
+
+            /**
+             * Framework to write Android UI tests.
+             * @link https://developer.android.com/training/testing/espresso
+             * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            espressoCore : "androidx.test.espresso:espresso-core:$rootProject.espressoCoreVersion"
+    ]
+}

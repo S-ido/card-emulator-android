@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.androidCompileSdkVersion
@@ -14,6 +13,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -30,9 +30,15 @@ dependencies {
     implementation project(":data")
 
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
+
     implementation rootProject.androidLibs.appCompat
     implementation rootProject.androidLibs.ktx
     implementation rootProject.androidLibs.constraintLayout
+    implementation rootProject.androidLibs.multidex
+
+    implementation rootProject.di.dagger
+    kapt rootProject.di.daggerCompiler
+
     testImplementation rootProject.testLibs.junit
     androidTestImplementation rootProject.testLibs.runner
     androidTestImplementation rootProject.testLibs.espressoCore

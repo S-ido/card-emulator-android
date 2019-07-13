@@ -1,6 +1,6 @@
-package com.chebdowski.data
+package com.chebdowski.domain.cards.repository
 
-import com.chebdowski.domain.Card
+import com.chebdowski.domain.cards.model.Card
 import io.reactivex.Single
 
 interface CardsRepository {

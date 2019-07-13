@@ -22,6 +22,9 @@ ext {
     daggerVersion = '2.23.2'
     daggerCompilerVersion = '2.23.2'
 
+    // Reactive
+    rxJavaVersion = '3.0.0-RC1'
+
     androidLibs = [
             /**
              * Android support library.
@@ -90,5 +93,14 @@ ext {
              * @licence Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
             daggerCompiler : "com.google.dagger:dagger-compiler:$rootProject.daggerCompilerVersion"
+    ]
+
+    reactive = [
+            /**
+             * A library for composing asynchronous and event-based programs by using observable sequences.
+             * @link https://github.com/ReactiveX/RxJava
+             * @licence Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            rxJava: "io.reactivex.rxjava3:rxjava:$rootProject.rxJavaVersion"
     ]
 }

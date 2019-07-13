@@ -1,3 +1,9 @@
 package com.chebdowski.data
 
-class CardsRepository
+import com.chebdowski.domain.Card
+import io.reactivex.Single
+
+interface CardsRepository {
+
+    fun getCards(): Single<List<Card>>
+}

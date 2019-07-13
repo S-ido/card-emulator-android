@@ -7,5 +7,3 @@ dependencies {
     implementation project(":data")
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"

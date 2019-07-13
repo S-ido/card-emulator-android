@@ -4,7 +4,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(":domain")
-}
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+    implementation rootProject.reactive.rxJava
+}

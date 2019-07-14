@@ -26,10 +26,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(":domain")
-    implementation project(":interactors")
     implementation project(":data")
-
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
 
     implementation rootProject.androidLibs.appCompat
     implementation rootProject.androidLibs.ktx

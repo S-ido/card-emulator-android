@@ -16,6 +16,8 @@ ext {
     // Test Libraries
     junitVersion = '4.12'
     testRunnerVersion = '1.1.1'
+    mockitoVersion = '3.0.0'
+    mockitoKotlinVersion = '2.1.0'
     espressoCoreVersion = '3.1.1'
 
     // Dependency Injection
@@ -23,7 +25,8 @@ ext {
     daggerCompilerVersion = '2.23.2'
 
     // Reactive
-    rxJavaVersion = '3.0.0-RC1'
+    rxJavaVersion = '2.2.10'
+    rxAndroidVersion = "2.1.1"
 
     androidLibs = [
             /**
@@ -31,14 +34,14 @@ ext {
              * @link https://developer.android.com/jetpack/androidx/releases/appcompat
              * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            appCompat : "androidx.appcompat:appcompat:$rootProject.appCompatVersion",
+            appCompat : "androidx.appcompat:appcompat:$appCompatVersion",
 
             /**
              * A set of Kotlin extensions for Android app development.
              * @link https://developer.android.com/kotlin/ktx
              * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            ktx : "androidx.core:core-ktx:$rootProject.ktxVersion",
+            ktx : "androidx.core:core-ktx:$ktxVersion",
 
             /**
              * A support library providing implementation of ConstraintLayout.
@@ -46,14 +49,14 @@ ext {
              * @link https://developer.android.com/reference/android/support/constraint/ConstraintLayout
              * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            constraintLayout : "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayoutVersion",
+            constraintLayout : "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion",
 
             /**
              * The multidex support library.
              * @link https://developer.android.com/studio/build/multidex
              * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            multidex : "androidx.multidex:multidex:$rootProject.multidexVersion"
+            multidex : "androidx.multidex:multidex:$multidexVersion"
     ]
 
     testLibs = [
@@ -62,21 +65,35 @@ ext {
              * @link https://github.com/junit-team/junit
              * @license Eclipse Public License - v 1.0 [https://github.com/junit-team/junit/blob/master/LICENSE-junit.txt]
              */
-            junit : "junit:junit:$rootProject.junitVersion",
+            junit : "junit:junit:$junitVersion",
 
             /**
              * An Instrumentation that runs JUnit3 and JUnit4 tests against an Android package.
              * @link https://developer.android.com/reference/androidx/test/runner/package-summary.html
              * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            runner : "androidx.test:runner:$rootProject.testRunnerVersion",
+            runner : "androidx.test:runner:$testRunnerVersion",
+
+            /**
+             * Mocking framework for Java.
+             * @link https://github.com/mockito/mockito
+             * @license MIT License [https://en.wikipedia.org/wiki/MIT_License]
+             */
+            mockito : "org.mockito:mockito-core:$mockitoVersion",
+
+            /**
+             * A small library that provides helper functions to work with Mockito in Kotlin.
+             * @link https://github.com/nhaarman/mockito-kotlin
+             * @license MIT License [https://en.wikipedia.org/wiki/MIT_License]
+             */
+            mockitoKotlin : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
 
             /**
              * Framework to write Android UI tests.
              * @link https://developer.android.com/training/testing/espresso
              * @license Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            espressoCore : "androidx.test.espresso:espresso-core:$rootProject.espressoCoreVersion"
+            espressoCore : "androidx.test.espresso:espresso-core:$espressoCoreVersion"
     ]
 
     di = [
@@ -85,14 +102,14 @@ ext {
              * @link https://github.com/google/dagger
              * @licence Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            dagger : "com.google.dagger:dagger:$rootProject.daggerVersion",
+            dagger : "com.google.dagger:dagger:$daggerVersion",
 
             /**
              * Enable code generation
              * @link https://github.com/google/dagger
              * @licence Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            daggerCompiler : "com.google.dagger:dagger-compiler:$rootProject.daggerCompilerVersion"
+            daggerCompiler : "com.google.dagger:dagger-compiler:$daggerCompilerVersion"
     ]
 
     reactive = [
@@ -101,6 +118,13 @@ ext {
              * @link https://github.com/ReactiveX/RxJava
              * @licence Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
              */
-            rxJava: "io.reactivex.rxjava3:rxjava:$rootProject.rxJavaVersion"
+            rxJava: "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+
+            /**
+             * Android specific bindings for rxJava.
+             * @link https://github.com/ReactiveX/RxAndroid
+             * @licence Apache License - v 2.0 [http://www.apache.org/licenses/LICENSE-2.0]
+             */
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     ]
 }
